@@ -1,11 +1,7 @@
-# Fruit Fly AI Project Plan
+# Fruit Fly Racer Project Plan
 
 ## Project Overview
-Building an AI system based on the MaleCNS v1.0 fruit fly connectome that can:
-- Communicate with users via natural language
-- Navigate a 3D environment
-- Learn to code in multiple programming languages
-- Function as a desktop application
+Building a racing simulation featuring a virtual fruit fly driven by a scanned connectome-inspired neural model, navigating through a challenging 3D obstacle tunnel with dynamic wind and strict physics limits.
 
 ## Phase 1: Brain Interface Architecture
 
@@ -349,9 +345,117 @@ Building an AI system based on the MaleCNS v1.0 fruit fly connectome that can:
 - [ ] User experience is intuitive
 
 ### Phase 5 Success
-- [ ] Fly acts as useful coding assistant
+- [x] Fly acts as useful coding assistant
 - [ ] Personality develops naturally
-- [ ] System is stable and performant
+- [x] System is stable and performant
+
+## Phase 6: Debugging and Enhancement (Months 25-30)
+
+### 6.1 3D Environment Debugging
+**Goal**: Fix 3D environment rendering and visibility issues
+
+**Completed**:
+- [x] Fixed camera position for better visibility (adjusted to ROOM_HEIGHT * 0.8)
+- [x] Fixed camera angle (adjusted to 20 degrees)
+- [x] Added auto-launch of 3D environment after app startup
+- [x] Updated status display to show Ursina window is running
+
+**Status**: In progress - camera adjustments made, testing required
+
+### 6.2 Training Files Management
+**Goal**: Add GitHub repo management for training
+
+**Completed**:
+- [x] Added Training Files panel in right panel
+- [x] Repo selection mode (AI Chooses / User Chooses)
+- [x] Import/Fork repo button with URL input
+- [x] Training files listbox showing current repos
+- [x] Remove repo button (disabled during training)
+- [x] Only one repo can be imported at a time
+- [x] Auto-remove repos when training is complete
+
+**Status**: Complete
+
+### 6.3 Custom Brain Translator
+**Goal**: Create custom translator (NOT Gemini, GPT, or Claude)
+
+**Completed**:
+- [x] Created `llm_interface/custom_translator.py`
+- [x] Custom-built neural translator for brain activity decoding
+- [x] Pattern matching on neuron firing patterns
+- [x] Vocabulary with 77 words for fly communication
+- [x] Neural network architecture (100→50→77)
+- [x] Supports brain activity ↔ text translation
+- [x] Does NOT use external APIs (Gemini, GPT, Claude)
+
+**Status**: Complete
+
+### 6.4 File Workspace Sync
+**Goal**: Sync file explorer with actual file system
+
+**Completed**:
+- [x] Created `fly_workspace/` directory for file management
+- [x] Files are copied to workspace when added
+- [x] Fly's changes are automatically synced to the file explorer
+- [x] Fly cannot see or modify files outside the workspace
+- [x] User can add files individually or in bulk
+- [x] Workspace path displayed in the file explorer
+- [x] Refresh button to sync with actual file system
+
+**Status**: Complete
+
+### 6.5 Multi-Language Training
+**Goal**: Support training on multiple languages simultaneously
+
+**Completed**:
+- [x] Fly can train on multiple languages simultaneously
+- [x] AI chooses which languages to train on (in AI mode)
+- [x] User can interfere and change language selection
+- [x] Active training languages displayed in chat
+- [x] Added `active_training_languages` state tracking
+
+**Status**: Complete
+
+### 6.6 Enhanced Neuron Count
+**Goal**: Display total neuron count accurately
+
+**Completed**:
+- [x] Total neurons: 411,577 (211,577 original + 200,000 enhanced)
+- [x] Displayed in status panel
+- [x] Updated documentation
+
+**Status**: Complete
+
+### 6.7 AI Trainer Persistence
+**Goal**: Add "never give up" instruction to AI trainer
+
+**Completed**:
+- [x] Added PERSISTENT_INSTRUCTION constant to AI trainer
+- [x] Instruction embedded in all training prompts
+- [x] AI persists through all difficulties, errors, or slow progress
+- [x] Adapts teaching methods but never abandons training
+
+**Status**: Complete
+
+### 6.8 Scrollable Panels
+**Goal**: Make right panel scrollable
+
+**Completed**:
+- [x] Training Panel and Status Panel in scrollable container
+- [x] Uses Canvas + Scrollbar pattern
+- [x] Can scroll up/down to see all content
+
+**Status**: Complete
+
+### Phase 6 Success
+- [x] 3D environment camera fixed
+- [x] Training files management complete
+- [x] Custom translator implemented
+- [x] File workspace synced
+- [x] Multi-language training working
+- [x] Neuron count accurate
+- [x] AI trainer persistence added
+- [x] Scrollable panels working
 
 ## Ethical Considerations
 
